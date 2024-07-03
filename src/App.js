@@ -7,7 +7,7 @@ import MyStory from './pages/MyStory';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Mopa">
       <Routes>
         <Route path="/" element={<FrontPage />} />
         <Route path="/newhome" element={<NewHome />} />
