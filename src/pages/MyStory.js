@@ -11,7 +11,7 @@ export default function MyStory() {
   const audioPlayerRef = useRef(null);
   var top = true;
   const location = useLocation();
-  const { Text } = location.state || {};
+  const { Text, audioUrl } = location.state || {};
 
   const scrollToBottom = () => {
     if(top){
@@ -56,7 +56,7 @@ export default function MyStory() {
         <div>
         <ReactAudioPlayer
           ref={audioPlayerRef}
-          src={AudioOutput}
+          src={audioUrl}
           autoPlay
           controls
           className="hidden"
