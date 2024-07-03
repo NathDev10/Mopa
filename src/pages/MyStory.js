@@ -12,7 +12,7 @@ export default function MyStory() {
   var top = true;
   const location = useLocation();
   const { Text, audioUrl } = location.state || {};
-  conole.log(audioUrl);
+  console.log(audioUrl);
   const scrollToBottom = () => {
     if(top){
       top = false;
