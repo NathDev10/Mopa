@@ -3,7 +3,6 @@ import ReactAudioPlayer from 'react-audio-player';
 import { useLocation } from 'react-router-dom';
 import doublefleche from '../assets/double-fleche.png';
 import AudioPlayer from '../assets/AudioPlayer.gif';
-import AudioOutput from '../assets/output_Manuel.mp3';
 
 export default function MyStory() {
   const bottomRef = useRef(null);
@@ -12,8 +11,9 @@ export default function MyStory() {
   var top = true;
   const location = useLocation();
   const { Text, audioUrl } = location.state || {};
-  console.log(audioUrl);
+  
   const scrollToBottom = () => {
+    console.log(audioUrl);
     if(top){
       top = false;
       if (bottomRef.current) {
