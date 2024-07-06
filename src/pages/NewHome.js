@@ -53,38 +53,33 @@ export default function NewHome(){
           description: description,
           lieu: location
       };
-        try {
-          console.log('Envoi de la requête au serveur...');
-          const response = await axios.post('https://sheltered-cove-94091-9084cf6c4c08.herokuapp.com/generate', storyData);
-          const texte = response.data.texte;
-          console.log('Réponse générée:', texte);
-      
-          // Appeler la route pour générer l'audio
-          const audioResponse = await axios.post('https://sheltered-cove-94091-9084cf6c4c08.herokuapp.com/generate_audio', { texte });
-          const taskId = audioResponse.data.task_id;
-          console.log('ID de la tâche de génération audio:', taskId);
-      
-          // Vérifier périodiquement l'état de la tâche
-          let audioUrl = null;
-          while (!audioUrl) {
-            console.log('Vérification de l état de la tâche...');
-            const taskResponse = await axios.get(`https://sheltered-cove-94091-9084cf6c4c08.herokuapp.com/get_audio/${taskId}`);
-            if (taskResponse.data.state === 'SUCCESS' && taskResponse.data.result) {
-              audioUrl = taskResponse.data.result;
-              console.log('Audio prêt:', audioUrl);
-            } else if (taskResponse.data.state === 'FAILURE') {
-              throw new Error('Échec de la génération de laudio');
-            }
-            await new Promise(resolve => setTimeout(resolve, 5000)); // Attendre 5 secondes avant de vérifier à nouveau
-          }
-      
-          // Naviguer vers la page de l'histoire avec le texte et l'URL de l'audio
-          navigate('/mystory', { state: { Text: texte, AudioUrl: audioUrl } });
-        } catch (error) {
-          console.error('Erreur', error);
-        }
-        setLoading(false);
-    }
+
+      try {
+        console.log('Envoi de la requête au serveur...');
+        const response = await axios.post('https://sheltered-cove-94091-9084cf6c4c08.herokuapp.com/generate', storyData);
+        //await axios.post('https://sheltered-cove-94091.herokuapp.com/generate_audio', {texte: response.data.texte}); 
+        //navigation.navigate('MyStory' , {Text: response.data.texte});
+        //const text = `Dans la lumière dorée du coucher de soleil, je me tenais au sommet de la Tour Eiffel, admirant la vue imprenable sur Paris. Soudain, j'ai senti une présence derrière moi. Je me suis retournée et j'ai été frappée par la vue de Manuel Ferrara, un homme français grand et musclé, aux cheveux bruns et aux yeux perçants. Son regard intense m'a fait frissonner, et j'ai senti une attraction immédiate. Manuel s'est approché lentement,
+        // son sourire charmant révélant des fossettes séduisantes. Ses yeux ne quittaient pas les miens, et j'ai senti mon cœur battre de plus en plus fort. Il a levé la main et a doucement effleuré ma joue, son toucher électrisant faisant naître une étincelle entre nous. Je pouvais sentir son désir, aussi ardent que le mien. Nos lèvres se sont rencontrées dans un baiser passionné, gourmand et plein de promesses. Ses mains ont commencé à explorer mon corps, ses doigts habiles me faisant frissonner de plaisir. Je pouvais sentir son excitation, son désir pour moi, et cela n'a fait qu'attiser le mien. Manuel a commencé à me déshabiller lentement, ses yeux ne quittant pas les miens.
+        //  Chaque morceau de vêtement qui tombait dévoilait un peu plus ma peau, et je pouvais voir le désir brûler dans ses yeux. Sa respiration est devenue plus rapide, plus profonde, et je pouvais sentir son corps réagir à chaque caresse. Nos corps nus se sont enlacés, et nous avons commencé à explorer l'autre de manière plus intime. Manuel était un amant attentionné, répondant à chaque gémissement, à chaque frisson avec une précision experte. Ses mains, sa bouche, son corps tout entier semblait connaître mes désirs avant même que je ne les exprime. Le corps à corps était passionné, nos corps s'emboîtant parfaitement. Manuel variait l'intensité de ses caresses, me laissant toujours au bord de l'orgasme, mais jamais assez pour que je bascule. Son contrôle était impressionnant, et cela ne faisait qu'augmenter mon désir pour lui. Je pouvais sentir son désir, son excitation, et j'ai décidé que c'était le moment. J'ai guidé Manuel en moi, et nous avons tous les deux gémis de plaisir. La connexion entre nous était profonde, intense, et je pouvais sentir chaque partie de mon corps réagir à lui. Manuel cherchait à me combler, à me donner du plaisir, et je me suis abandonnée à lui, à son toucher, à son amour. Le rapport était intense, passionné, et je pouvais sentir l'orgasme monter en moi. Manuel a continué à me stimuler, à me faire monter, jusqu'à ce que je bascule finalement, un cri de plaisir s'échappant de mes lèvres. Manuel a suivi peu après, son corps se tendant et se détendant dans mes bras. Après, nous sommes restés enlacés, nos corps nus et transpirants se collant l'un à l'autre. La tension a doucement décru, remplacée par une vague d'apaisement et de satisfaction. Nous sommes restés ainsi, profitant de la connexion profonde que nous avions partagée, jusqu'à ce que le soleil se couche et que les lumières de Paris s'allument, éclairant notre amour.`
+        const responseaudio = axios.post('https://sheltered-cove-94091-9084cf6c4c08.herokuapp.com/generate_audio', {texte: response.data.texte}, {
+          responseType: 'blob', // Important pour recevoir un fichier blob
+        });
+
+        const url = URL.createObjectURL(responseaudio.data);
+        
+        navigate('/mystory', { state: { Text: response.data.texte, audioUrl: url }, });
+        //console.log('Réponse reçue du serveur:', response.data);
+        //const story
+        //console.log(response.data.texte);
+        //console.log(storyText);
+        //PEUT ETRE VERIFIER LA SORTIE DE LA REQUETE ? 
+        //setStory(storyText);
+      } catch (error) {
+        console.error('Erreur', error);
+      }
+      setLoading(false)
+      };
      const enterHot = () => {
     //     document.documentElement.style.setProperty('--main-color', 'linear-gradient(90deg,#ff3131, #ff914d)');
     //     document.documentElement.style.setProperty('--font-color', '#9f0000');
