@@ -34,7 +34,6 @@ export default function NewHome(){
   const handleSubmitPassword =  async (password) => {
     try {
       const response = await axios.post('https://sheltered-cove-94091-9084cf6c4c08.herokuapp.com/check_password',  {password} );
-      console.log("Ma bite touche mon front" + response.data.success)
       if (response.data.success) {
         alert('Correct password.');
         // Appelez votre fonction ici
