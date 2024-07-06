@@ -31,13 +31,21 @@ export default function NewHome(){
     setIsPopupVisible(false);
   };
 
-  const handleSubmitPassword = (password) => {
-    if (password === correctPassword) {
-      // Appelez votre fonction ici
-      setIsPopupVisible(false);
-      enterRomantic();
-    } else {
-      alert('Incorrect password.');
+  const handleSubmitPassword =  async (password) => {
+    try {
+      const response = await axios.post('http://sheltered-cove-94091-9084cf6c4c08.herokuapp.com/check_password',  {password} );
+      console.log("Ma bite touche mon front" + response.data.success)
+      if (response.data.success) {
+        alert('Correct password.');
+        // Appelez votre fonction ici
+        setIsPopupVisible(false);
+        enterRomantic();
+      } else {
+        alert('Incorrect password.');
+      }
+    } catch (error) {
+      console.error('There was an error!', error);
+      alert('There was an error with the request.');
     }
   };
 
