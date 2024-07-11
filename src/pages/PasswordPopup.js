@@ -4,7 +4,8 @@ import '../Style.css'; // Assurez-vous d'importer votre fichier CSS
 const PasswordPopup = ({ onClose, onSubmit }) => {
   const [password, setPassword] = useState('');
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     onSubmit(password);
   };
 

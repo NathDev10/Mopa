@@ -7,7 +7,8 @@ import LoadingTroll from '../assets/LoadingTroll.gif';
 import doublefleche from '../assets/double-fleche.png';
 import FireEmoji from '../assets/FireEmoji.png';
 
-
+const adressBackend = "https://sheltered-cove-94091-9084cf6c4c08.herokuapp.com"
+//const adressBackend = "http://localhost:5000"
 
 
 export default function NewHome(){
@@ -33,7 +34,7 @@ export default function NewHome(){
 
   const handleSubmitPassword =  async (password) => {
     try {
-      const response = await axios.post('https://sheltered-cove-94091-9084cf6c4c08.herokuapp.com/check_password',  {password} );
+      const response = await axios.post(adressBackend + '/check_password',  {password} );
       if (response.data.success) {
         alert('Correct password.');
         // Appelez votre fonction ici
@@ -46,6 +47,7 @@ export default function NewHome(){
       console.error('There was an error!', error);
       alert('There was an error with the request.');
     }
+    setIsPopupVisible(false);
   };
 
   async function  enterRomantic () {
@@ -63,13 +65,13 @@ export default function NewHome(){
 
       try {
         console.log('Envoi de la requête au serveur...');
-        const response = await axios.post('https://sheltered-cove-94091-9084cf6c4c08.herokuapp.com/generate', storyData);
+        const response = await axios.post(adressBackend + '/generate', storyData);
         //await axios.post('https://sheltered-cove-94091.herokuapp.com/generate_audio', {texte: response.data.texte}); 
         //navigation.navigate('MyStory' , {Text: response.data.texte});
         //const text = `Dans la lumière dorée du coucher de soleil, je me tenais au sommet de la Tour Eiffel, admirant la vue imprenable sur Paris. Soudain, j'ai senti une présence derrière moi. Je me suis retournée et j'ai été frappée par la vue de Manuel Ferrara, un homme français grand et musclé, aux cheveux bruns et aux yeux perçants. Son regard intense m'a fait frissonner, et j'ai senti une attraction immédiate. Manuel s'est approché lentement,
         // son sourire charmant révélant des fossettes séduisantes. Ses yeux ne quittaient pas les miens, et j'ai senti mon cœur battre de plus en plus fort. Il a levé la main et a doucement effleuré ma joue, son toucher électrisant faisant naître une étincelle entre nous. Je pouvais sentir son désir, aussi ardent que le mien. Nos lèvres se sont rencontrées dans un baiser passionné, gourmand et plein de promesses. Ses mains ont commencé à explorer mon corps, ses doigts habiles me faisant frissonner de plaisir. Je pouvais sentir son excitation, son désir pour moi, et cela n'a fait qu'attiser le mien. Manuel a commencé à me déshabiller lentement, ses yeux ne quittant pas les miens.
         //  Chaque morceau de vêtement qui tombait dévoilait un peu plus ma peau, et je pouvais voir le désir brûler dans ses yeux. Sa respiration est devenue plus rapide, plus profonde, et je pouvais sentir son corps réagir à chaque caresse. Nos corps nus se sont enlacés, et nous avons commencé à explorer l'autre de manière plus intime. Manuel était un amant attentionné, répondant à chaque gémissement, à chaque frisson avec une précision experte. Ses mains, sa bouche, son corps tout entier semblait connaître mes désirs avant même que je ne les exprime. Le corps à corps était passionné, nos corps s'emboîtant parfaitement. Manuel variait l'intensité de ses caresses, me laissant toujours au bord de l'orgasme, mais jamais assez pour que je bascule. Son contrôle était impressionnant, et cela ne faisait qu'augmenter mon désir pour lui. Je pouvais sentir son désir, son excitation, et j'ai décidé que c'était le moment. J'ai guidé Manuel en moi, et nous avons tous les deux gémis de plaisir. La connexion entre nous était profonde, intense, et je pouvais sentir chaque partie de mon corps réagir à lui. Manuel cherchait à me combler, à me donner du plaisir, et je me suis abandonnée à lui, à son toucher, à son amour. Le rapport était intense, passionné, et je pouvais sentir l'orgasme monter en moi. Manuel a continué à me stimuler, à me faire monter, jusqu'à ce que je bascule finalement, un cri de plaisir s'échappant de mes lèvres. Manuel a suivi peu après, son corps se tendant et se détendant dans mes bras. Après, nous sommes restés enlacés, nos corps nus et transpirants se collant l'un à l'autre. La tension a doucement décru, remplacée par une vague d'apaisement et de satisfaction. Nous sommes restés ainsi, profitant de la connexion profonde que nous avions partagée, jusqu'à ce que le soleil se couche et que les lumières de Paris s'allument, éclairant notre amour.`
-        const responseaudio = await axios.post('https://sheltered-cove-94091-9084cf6c4c08.herokuapp.com/generate_audio', {texte: response.data.texte}, {
+        const responseaudio = await axios.post(adressBackend + '/generate_audio', {texte: response.data.texte}, {
           responseType: 'blob', // Important pour recevoir un fichier blob
         });
 
@@ -160,13 +162,13 @@ export default function NewHome(){
               <img src={doublefleche} height={50} width={60} onClick={scrollToBottom}></img>
               </div>
               <div className="exampleStory">
-                  <div>
+                  <div className='TypeStory'>
                     Histoire de Alex
                     <div className='AlexStory'>
 
                     </div>
                   </div>
-                  <div>
+                  <div className='TypeStory'>
                     Histoire de Charles
                     <div className='AlexStory'>
 
