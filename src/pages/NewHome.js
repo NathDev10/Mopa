@@ -6,6 +6,7 @@ import heartEmoji from '../assets/heartemoji.png';
 import LoadingTroll from '../assets/LoadingTroll.gif';
 import doublefleche from '../assets/double-fleche.png';
 import FireEmoji from '../assets/FireEmoji.png';
+import audioFile from "../assets/output_Manuel.mp3";
 
 const adressBackend = "https://sheltered-cove-94091-9084cf6c4c08.herokuapp.com"
 //const adressBackend = "http://localhost:5000"
@@ -33,6 +34,18 @@ export default function NewHome(){
     setIsPopupVisible(true);
     setStoryType('sauvage')
   };
+
+  const enterAlexStorie = () => {
+    const url =  audioFile
+    const texte = "Lorem ipsum dolor \n sit amet, consectetur adipiscing elit. Curabitur tristique nunc sed turpis feugiat, ac elementum mauris auctor. Phasellus congue mauris vitae velit ultricies, quis pharetra neque rhoncus. Fusce gravida blandit commodo. Vestibulum euismod scelerisque facilisis. Suspendisse fringilla ullamcorper massa a facilisis. Etiam sit amet nunc et ipsum tristique hendrerit. Donec rutrum placerat lacus. Duis sodales, nisl id aliquet gravida, nisl magna euismod orci, et venenatis nisl libero quis libero. Integer eu metus eget elit luctus dictum ut at dolor. Aenean facilisis, ligula at placerat imperdiet, turpis nulla accumsan mi, ut venenatis arcu sem vel arcu. Aliquam egestas est a dolor interdum, ac pharetra sapien maximus. Vestibulum suscipit velit et augue pulvinar, semper dignissim dolor gravida. Vestibulum eu iaculis mi. Nullam lacinia est at lectus volutpat aliquet. Maecenas mattis, augue non molestie mollis, purus dolor porta felis, a rutrum ante arcu sit amet nisl.";
+    navigate('/mystory', { state: { Text: texte, audioUrl: url }, });
+  };
+
+  const enterCharleStorie = () => {
+    const url =  audioFile
+    const texte = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tristique nunc sed turpis feugiat, ac elementum mauris auctor. Phasellus congue mauris vitae velit ultricies, quis pharetra neque rhoncus. Fusce gravida blandit commodo. Vestibulum euismod scelerisque facilisis. Suspendisse fringilla ullamcorper massa a facilisis. Etiam sit amet nunc et ipsum tristique hendrerit. Donec rutrum placerat lacus. Duis sodales, nisl id aliquet gravida, nisl magna euismod orci, et venenatis nisl libero quis libero. Integer eu metus eget elit luctus dictum ut at dolor. Aenean facilisis, ligula at placerat imperdiet, turpis nulla accumsan mi, ut venenatis arcu sem vel arcu. Aliquam egestas est a dolor interdum, ac pharetra sapien maximus. Vestibulum suscipit velit et augue pulvinar, semper dignissim dolor gravida. Vestibulum eu iaculis mi. Nullam lacinia est at lectus volutpat aliquet. Maecenas mattis, augue non molestie mollis, purus dolor porta felis, a rutrum ante arcu sit amet nisl.";
+    navigate('/mystory', { state: { Text: texte, audioUrl: url }, });
+};
 
   const handleClosePopup = () => {
     setIsPopupVisible(false);
@@ -82,13 +95,34 @@ export default function NewHome(){
         //const text = `Dans la lumière dorée du coucher de soleil, je me tenais au sommet de la Tour Eiffel, admirant la vue imprenable sur Paris. Soudain, j'ai senti une présence derrière moi. Je me suis retournée et j'ai été frappée par la vue de Manuel Ferrara, un homme français grand et musclé, aux cheveux bruns et aux yeux perçants. Son regard intense m'a fait frissonner, et j'ai senti une attraction immédiate. Manuel s'est approché lentement,
         // son sourire charmant révélant des fossettes séduisantes. Ses yeux ne quittaient pas les miens, et j'ai senti mon cœur battre de plus en plus fort. Il a levé la main et a doucement effleuré ma joue, son toucher électrisant faisant naître une étincelle entre nous. Je pouvais sentir son désir, aussi ardent que le mien. Nos lèvres se sont rencontrées dans un baiser passionné, gourmand et plein de promesses. Ses mains ont commencé à explorer mon corps, ses doigts habiles me faisant frissonner de plaisir. Je pouvais sentir son excitation, son désir pour moi, et cela n'a fait qu'attiser le mien. Manuel a commencé à me déshabiller lentement, ses yeux ne quittant pas les miens.
         //  Chaque morceau de vêtement qui tombait dévoilait un peu plus ma peau, et je pouvais voir le désir brûler dans ses yeux. Sa respiration est devenue plus rapide, plus profonde, et je pouvais sentir son corps réagir à chaque caresse. Nos corps nus se sont enlacés, et nous avons commencé à explorer l'autre de manière plus intime. Manuel était un amant attentionné, répondant à chaque gémissement, à chaque frisson avec une précision experte. Ses mains, sa bouche, son corps tout entier semblait connaître mes désirs avant même que je ne les exprime. Le corps à corps était passionné, nos corps s'emboîtant parfaitement. Manuel variait l'intensité de ses caresses, me laissant toujours au bord de l'orgasme, mais jamais assez pour que je bascule. Son contrôle était impressionnant, et cela ne faisait qu'augmenter mon désir pour lui. Je pouvais sentir son désir, son excitation, et j'ai décidé que c'était le moment. J'ai guidé Manuel en moi, et nous avons tous les deux gémis de plaisir. La connexion entre nous était profonde, intense, et je pouvais sentir chaque partie de mon corps réagir à lui. Manuel cherchait à me combler, à me donner du plaisir, et je me suis abandonnée à lui, à son toucher, à son amour. Le rapport était intense, passionné, et je pouvais sentir l'orgasme monter en moi. Manuel a continué à me stimuler, à me faire monter, jusqu'à ce que je bascule finalement, un cri de plaisir s'échappant de mes lèvres. Manuel a suivi peu après, son corps se tendant et se détendant dans mes bras. Après, nous sommes restés enlacés, nos corps nus et transpirants se collant l'un à l'autre. La tension a doucement décru, remplacée par une vague d'apaisement et de satisfaction. Nous sommes restés ainsi, profitant de la connexion profonde que nous avions partagée, jusqu'à ce que le soleil se couche et que les lumières de Paris s'allument, éclairant notre amour.`
-        const responseaudio = await axios.post(adressBackend + '/generate_audio', {texte: response.data.texte}, {
-          responseType: 'blob', // Important pour recevoir un fichier blob
-        });
+        //const responseaudio = await axios.post(adressBackend + '/generate_audio', {texte: response.data.texte}, {
+        //  responseType: 'blob', // Important pour recevoir un fichier blob
+        //});
+        const texteGenere = response.data.texte;
 
-        const url = URL.createObjectURL(responseaudio.data);
+        // Appel pour obtenir le flux audio en continu
+      const audioResponse = await fetch(adressBackend +'/generate_audio', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ texte: texteGenere })
+      });
+
+      // Vérifier si la réponse est OK
+      if (audioResponse.ok) {
+        // Créer un objet URL à partir du flux audio pour le streaming
+        const audioUrl = URL.createObjectURL(new Blob([await audioResponse.arrayBuffer()], { type: 'audio/mpeg' }));
+
+        // Naviguer vers la page de lecture avec le texte et l'URL audio
+        navigate('/mystory', { state: { Text: texteGenere, audioUrl: audioUrl } });
+      } else {
+        console.error('Erreur lors de la génération de l\'audio:', audioResponse.statusText);
+      }
+
+        //const url = URL.createObjectURL(responseaudio.data);
         
-        navigate('/mystory', { state: { Text: response.data.texte, audioUrl: url }, });
+        //navigate('/mystory', { state: { Text: response.data.texte, audioUrl: url }, });
         //console.log('Réponse reçue du serveur:', response.data);
         //const story
         //console.log(response.data.texte);
@@ -207,15 +241,15 @@ export default function NewHome(){
               <div className="exampleStory">
                   <div className='TypeStory'>
                     Histoire de Alex
-                    <div className='AlexStory'>
+                    <button type="button" onClick={enterAlexStorie} className='AlexStory'>
 
-                    </div>
+                    </button>
                   </div>
                   <div className='TypeStory'>
                     Histoire de Charles
-                    <div className='AlexStory'>
+                    <button type="button" onClick={enterCharleStorie} className='AlexStory'>
 
-                    </div>
+                    </button>
                   </div>
               </div>
               <div ref={bottomRef}></div>

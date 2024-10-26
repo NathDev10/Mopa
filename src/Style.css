@@ -175,7 +175,7 @@ body {
   color:#007CC4;
 }
 
-.story-romantic-button:hover, .story-hot-button:hover {
+.story-romantic-button:hover, .story-hot-button:hover,.AlexStory:hover {
   transform: scale(1.04);
 }
 
