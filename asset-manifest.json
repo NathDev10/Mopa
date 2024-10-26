@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/Mopa/static/css/main.87c1715b.css",
-    "main.js": "/Mopa/static/js/main.6abf6cbd.js",
+    "main.css": "/Mopa/static/css/main.37c4cc5d.css",
+    "main.js": "/Mopa/static/js/main.f3b7a6e5.js",
     "static/js/453.86742b18.chunk.js": "/Mopa/static/js/453.86742b18.chunk.js",
+    "static/media/output_Manuel.mp3": "/Mopa/static/media/output_Manuel.4ad83391fede5e73c519.mp3",
     "static/media/heartemoji.png": "/Mopa/static/media/heartemoji.57467f3acea54b07a171.png",
     "static/media/FireEmoji.png": "/Mopa/static/media/FireEmoji.dbef9c1ffdf9a797319b.png",
     "static/media/OpenSans.ttf": "/Mopa/static/media/OpenSans.c790f99966352c531503.ttf",
@@ -11,12 +12,12 @@
     "static/media/LoadingTroll.gif": "/Mopa/static/media/LoadingTroll.a8c40e6fb2ee045f144c.gif",
     "static/media/double-fleche.png": "/Mopa/static/media/double-fleche.0c21f177ccc0e0e682e7.png",
     "index.html": "/Mopa/index.html",
-    "main.87c1715b.css.map": "/Mopa/static/css/main.87c1715b.css.map",
-    "main.6abf6cbd.js.map": "/Mopa/static/js/main.6abf6cbd.js.map",
+    "main.37c4cc5d.css.map": "/Mopa/static/css/main.37c4cc5d.css.map",
+    "main.f3b7a6e5.js.map": "/Mopa/static/js/main.f3b7a6e5.js.map",
     "453.86742b18.chunk.js.map": "/Mopa/static/js/453.86742b18.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.87c1715b.css",
-    "static/js/main.6abf6cbd.js"
+    "static/css/main.37c4cc5d.css",
+    "static/js/main.f3b7a6e5.js"
   ]
 }
