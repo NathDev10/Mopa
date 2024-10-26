@@ -65,7 +65,7 @@ body {
   font-size: 4vw;
   cursor: pointer;
   border-radius: 60px;
-  border: 3px solid #007CC4;
+  border: 3px solid var(--font-color);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   background: var(--main-color);
   width: 50%;
@@ -95,7 +95,7 @@ body {
 
 .form-container{
   vertical-align: center;
-  width: 60%;
+  width: 80%;
 }
 .story-title {
   font-size: 8vw;
@@ -103,17 +103,17 @@ body {
   height: 10%;
 }
 .Story-Text{
-  text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   background: var(--main-color);
-  border: 2px solid #007CC4;
+  border: 2px solid var(--font-color);
   font-family: 'OpenSans';
   font-weight: bold;
   border-radius: 40px;
-  margin-left: 25rem;
-  margin-right: 25rem;
+  margin-left: 20%;
+  margin-right: 20%;
   margin-top: 15px;
+  padding: 3%;
   flex-direction: column;
 }
 .story-subtitle { 
@@ -126,6 +126,7 @@ body {
   flex-direction: column;
   align-items: center;
   height: 30%;
+  margin-bottom: 10%;
 }
 
 .story-label {
@@ -141,7 +142,7 @@ body {
   width: 80%;
   padding: 10px;
   margin-top: 5px;
-  border: 2px solid #007CC4;
+  border: 2px solid var(--font-color);
   border-radius: 60px;
   background: var(--main-color);
   font-weight: bold;
@@ -166,14 +167,14 @@ body {
   cursor: pointer;
   border-radius: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  border: 2px solid #007CC4;
+  border: 2px solid var(--font-color);
   margin: 0 10px;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'OpenSans';
-  color:#007CC4;
+  color:var(--font-color);
 }
 
 .story-romantic-button:hover, .story-hot-button:hover,.AlexStory:hover {
@@ -200,13 +201,13 @@ body {
 
 .AlexStory{
   border-radius: 60px;
-  border: 2px solid #007CC4;
+  border: 2px solid var(--font-color);
   background: var(--main-color);
   height: 75vh;
-  width: 20vw;
+  width: 95%;
 }
 .TypeStory{
-  width: 20vw;
+  width: 100%;
 }
 
 /* styles.css */
@@ -224,7 +225,7 @@ body {
 
 .popup-inner {
   background: var(--main-color);
-  border: 2px solid #007CC4;
+  border: 2px solid var(--font-color);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -234,7 +235,7 @@ body {
   margin: 10px 0;
   width: 80%;
   padding: 10px;
-  border: 2px solid #007CC4;
+  border: 2px solid var(--font-color);
   border-radius: 60px;
   background: var(--main-color);
   font-weight: bold;
@@ -246,11 +247,11 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  border: 2px solid #007CC4;
+  border: 2px solid var(--font-color);
   background: var(--main-color);
   font-family: 'OpenSans';  
   cursor: pointer;
-  color:#007CC4;
+  color:var(--font-color);
 }
 
 

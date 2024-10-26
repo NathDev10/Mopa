@@ -37,7 +37,7 @@ export default function NewHome(){
 
   const enterAlexStorie = () => {
     const url =  audioFile
-    const texte = "Lorem ipsum dolor \n sit amet, consectetur adipiscing elit. Curabitur tristique nunc sed turpis feugiat, ac elementum mauris auctor. Phasellus congue mauris vitae velit ultricies, quis pharetra neque rhoncus. Fusce gravida blandit commodo. Vestibulum euismod scelerisque facilisis. Suspendisse fringilla ullamcorper massa a facilisis. Etiam sit amet nunc et ipsum tristique hendrerit. Donec rutrum placerat lacus. Duis sodales, nisl id aliquet gravida, nisl magna euismod orci, et venenatis nisl libero quis libero. Integer eu metus eget elit luctus dictum ut at dolor. Aenean facilisis, ligula at placerat imperdiet, turpis nulla accumsan mi, ut venenatis arcu sem vel arcu. Aliquam egestas est a dolor interdum, ac pharetra sapien maximus. Vestibulum suscipit velit et augue pulvinar, semper dignissim dolor gravida. Vestibulum eu iaculis mi. Nullam lacinia est at lectus volutpat aliquet. Maecenas mattis, augue non molestie mollis, purus dolor porta felis, a rutrum ante arcu sit amet nisl.";
+    const texte = "Lorem ipsum dolor \n sit amet, consectetur adipiscing elit. Curabitur tristique nunc sed turpis feugiat, ac elementum mauris auctor. Phasellus congue mauris vitae velit ultricies, quis pharetra\n neque rhoncus. Fusce gravida blandit commodo. Vestibulum euismod scelerisque facilisis. Suspendisse fringilla ullamcorper massa a facilisis. Etiam sit amet nunc et ipsum tristique hendrerit. Donec rutrum placerat lacus. Duis sodales, nisl id aliquet gravida, nisl magna euismod orci, et venenatis nisl libero quis libero.\n Integer eu metus eget elit luctus dictum ut at dolor. Aenean facilisis, ligula at placerat imperdiet, turpis nulla accumsan mi, ut venenatis arcu sem vel arcu. Aliquam egestas est a dolor interdum, ac pharetra sapien maximus. Vestibulum suscipit velit et augue pulvinar, semper dignissim dolor gravida. Vestibulum eu iaculis mi.\n Nullam lacinia est at lectus volutpat aliquet. Maecenas mattis, augue non molestie mollis, purus dolor porta felis, a rutrum ante arcu sit amet nisl.";
     navigate('/mystory', { state: { Text: texte, audioUrl: url }, });
   };
 
@@ -224,13 +224,13 @@ export default function NewHome(){
               </div>
               <div className="exampleStory">
                   <div className='TypeStory'>
-                    Histoire de Alex
+                    <h3>Histoire de Alex</h3>
                     <button type="button" onClick={enterAlexStorie} className='AlexStory'>
 
                     </button>
                   </div>
                   <div className='TypeStory'>
-                    Histoire de Charles
+                  <h3>Histoire de Charles</h3>
                     <button type="button" onClick={enterCharleStorie} className='AlexStory'>
 
                     </button>
