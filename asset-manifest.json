@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Mopa/static/css/main.37c4cc5d.css",
-    "main.js": "/Mopa/static/js/main.1db6206b.js",
+    "main.css": "/Mopa/static/css/main.bc10bc98.css",
+    "main.js": "/Mopa/static/js/main.0c382f55.js",
     "static/js/453.86742b18.chunk.js": "/Mopa/static/js/453.86742b18.chunk.js",
     "static/media/output_Manuel.mp3": "/Mopa/static/media/output_Manuel.4ad83391fede5e73c519.mp3",
     "static/media/heartemoji.png": "/Mopa/static/media/heartemoji.57467f3acea54b07a171.png",
@@ -12,12 +12,12 @@
     "static/media/LoadingTroll.gif": "/Mopa/static/media/LoadingTroll.a8c40e6fb2ee045f144c.gif",
     "static/media/double-fleche.png": "/Mopa/static/media/double-fleche.0c21f177ccc0e0e682e7.png",
     "index.html": "/Mopa/index.html",
-    "main.37c4cc5d.css.map": "/Mopa/static/css/main.37c4cc5d.css.map",
-    "main.1db6206b.js.map": "/Mopa/static/js/main.1db6206b.js.map",
+    "main.bc10bc98.css.map": "/Mopa/static/css/main.bc10bc98.css.map",
+    "main.0c382f55.js.map": "/Mopa/static/js/main.0c382f55.js.map",
     "453.86742b18.chunk.js.map": "/Mopa/static/js/453.86742b18.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.37c4cc5d.css",
-    "static/js/main.1db6206b.js"
+    "static/css/main.bc10bc98.css",
+    "static/js/main.0c382f55.js"
   ]
 }
