@@ -51,7 +51,9 @@ export default function MyStory() {
         </div>
         
         <div className="Story-Text">
-            {Text}
+        {Text.split('\n').map((line, index) => (
+          <p key={index}>{line}</p>
+          ))}
         </div>
         <div>
         <ReactAudioPlayer

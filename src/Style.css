@@ -114,6 +114,7 @@ body {
   margin-left: 25rem;
   margin-right: 25rem;
   margin-top: 15px;
+  flex-direction: column;
 }
 .story-subtitle { 
   font-size: 5vw;
