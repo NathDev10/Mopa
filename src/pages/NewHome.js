@@ -101,24 +101,9 @@ export default function NewHome(){
         const texteGenere = response.data.texte;
 
         // Appel pour obtenir le flux audio en continu
-      const audioResponse = await fetch(adressBackend +'/generate_audio', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ texte: texteGenere })
-      });
+        const audioUrl = `${adressBackend}/generate_audio?texte=${encodeURIComponent(texteGenere)}`;
 
-      // Vérifier si la réponse est OK
-      if (audioResponse.ok) {
-        // Créer un objet URL à partir du flux audio pour le streaming
-        const audioUrl = URL.createObjectURL(new Blob([await audioResponse.arrayBuffer()], { type: 'audio/mpeg' }));
-
-        // Naviguer vers la page de lecture avec le texte et l'URL audio
         navigate('/mystory', { state: { Text: texteGenere, audioUrl: audioUrl } });
-      } else {
-        console.error('Erreur lors de la génération de l\'audio:', audioResponse.statusText);
-      }
 
         //const url = URL.createObjectURL(responseaudio.data);
         
